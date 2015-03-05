@@ -1,0 +1,6 @@
+{
+  "name": "express-demo",
+  "dependencies": {
+    "express": "latest"
+  }
+}
