@@ -1,0 +1,2545 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"e3fb4bb422","applicationID":"195222","transactionName":"ewpYQ0tYCV8GRhdSXlYWQ1tNVgtHEBtLWV5P","queueTime":0,"applicationTime":747,"agentToken":null,"agent":"js-agent.newrelic.com/nr-536.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgQCUlVACQoFVlNQ"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(5),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(3),t(4),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:6,4:5,5:20,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:20,2:21,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:21,2:20,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:21,2:20,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:21,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],10:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","trackUserAction","finished","traceEvent","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:19,2:20,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&u&&u.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=l.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-536.min.js"},l=e.exports={offset:i(),origin:p,features:{}};u[f]?(u[f]("DOMContentLoaded",o,!1),c[f]("load",n,!1)):(u[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:19,2:10,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],19:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],20:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],21:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:20,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+    <title>Jigsaw - Profile - Aaron Erickson</title>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/images/touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/touch-icon-ipad-retina.png">
+  <!--[if (!IE)|(gte IE 8)]><!-->
+<link href="/packages/base-datauri.css?1425409459" media="all" rel="stylesheet" type="text/css" />
+<!--<![endif]-->
+<!--[if lte IE 7]>
+<link href="/packages/base.css?1425409459" media="all" rel="stylesheet" type="text/css" />
+<![endif]-->
+  
+  <script src="/packages/base.js?1425409459" type="text/javascript"></script>
+  <meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="VdS9wqwNFSPM0ZI7gcTb5wiT&#47;N4zyxGaHBngeEjclyc="/>
+
+<body class="">
+<div id='page'>
+
+  <div id="header" class="row">
+    <div id="logo" class="column small-12 medium-2 large-2">
+      <a href="/"><img src="/images/logo@2x.png" alt="Jigsaw homepage" title="Go to Homepage"/></a>
+    </div>
+    <div id="main-menu" class="column small-12 medium-10 large-5">
+    <ul class='navigation'>
+      
+      <li class=""><a href="/dash_board/twer_dashboard">Dashboard</a></li>
+      <li class="active"><a href="/consultants/advanced_search">People</a></li>
+      <li class=""><a href="/projects">Projects</a></li>
+      <li class=""><a href="/assignment_schedule">Assignments</a></li>
+      
+      
+</ul>    </div>
+
+    <div id="main-search" class="column small-12 medium-8 large-3">
+      <div class='quick-search'>
+  <div class="search-field">
+	  <form method="get" action="/search">
+	    <input id="general-search" autocomplete="off" class="search-box" type="search" name="query" placeholder="Search people or projects"/>
+	  </form>
+  </div>
+  <div id="search-content">
+    <div class="consultants">
+      <h3>People</h3>
+
+      <div id="consultants-result">
+        <i id="icon-spinner" class="fa fa-spinner fa-spin fa-stack-2x"></i>
+      </div>
+      <a href="/consultants/advanced_search" class="more-options">advanced search</a>
+    </div>
+    <div class="projects">
+      <h3>Projects</h3>
+
+      <div id="projects-result">
+        <i id="icon-spinner" class="fa fa-spinner fa-spin fa-stack-2x"></i>
+      </div>
+      <a href="/projects/advanced_search" class="more-options">advanced search</a>
+    </div>
+  </div>
+</div>
+
+<script id="consultantsTemplate" type="text/x-jsrender">
+<h3>People</h3>
+<div id="consultants-result">
+    <ul>
+      {{for consultants}}
+        <li>
+          <a href="/consultants/{{:employee_id}}" class='option'>
+            {{:name}}
+            {{if role}}
+              <span>{{:role}}</span>
+            {{/if}}
+          </a>
+        </li>
+      {{else}}
+        <p>No consultants found.</p>
+      {{/for}}
+      {{if remainingConsultants > 0}}
+        <li class='more'><a href="/consultants/search?criteria[free_text]={{:searchTerm}}">{{:remainingConsultants}} more</a></li>
+      {{/if}}
+    </ul>
+</div>
+<a href="/consultants/search?criteria[free_text]={{:searchTerm}}" class='more-options'>advanced search</a>
+</script>
+
+<script id="projectsTemplate" type="text/x-jsrender">
+<h3>Projects</h3>
+<div id="projects-result">
+    <ul>
+      {{for projects}}
+        <li>
+          {{if external_project }}
+            <a href="/projects/{{:external_project.id}}" class='option'>
+              <span class="account-name">
+                {{:external_project.account.name}}
+              </span>
+              <span class="project-name">
+                {{:external_project.name}}
+              </span>
+            </a>
+          {{/if}}
+          {{if internal_project }}
+            <a href="/projects/{{:internal_project.id}}" class='option'>
+              <span class="account-name">
+                {{:internal_project.account.name}}
+              </span>
+              <span class="project-name">
+                {{:internal_project.name}}
+              </span>
+            </a>
+          {{/if}}
+        </li>
+      {{else}}
+        <p>No projects found.</p>
+      {{/for}}
+      {{if remainingProjects > 0}}
+        <li class='more'><a href="/projects/search?criteria[names]={{:searchTerm}}">{{:remainingProjects}} more</a></li>
+      {{/if}}
+    </ul>
+</div>
+<a href="/projects/search?criteria[names]={{:searchTerm}}" class='more-options'>advanced search</a>
+</script>
+
+<script src="/packages/search.js?1425409459" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        var quickSearch = Jigsaw.QuickSearch(jQuery, document, window);
+        quickSearch.init({consultantsPath: "/consultants/sidebar_autocomplete", projectsPath: "/projects/sidebar_autocomplete"});
+    });
+</script>
+
+    </div>
+    <div class="user-menu columns small-5 medium-4 large-2 no-padding">
+        <div class="user-options column medium-10 large-12 no-padding">
+      <strong>Ryan Puskas</strong>
+      <ul class="dropdown">
+        <li>
+          <a href="/consultants/11660">My Profile</a>
+        </li>
+        <li>
+          <a href="https://docs.google.com/a/thoughtworks.com/forms/d/1_I5c-ej2TlFwuuej7j3MZ5glaieAa5Wws_ugcGF1sHk/viewform" target="blank_" class="feedback">Feedback</a>
+        </li>
+        <li class="last">
+          <a href="/logout">Log out</a>
+        </li>
+      </ul>
+      </div>
+      </div>
+    </div>
+
+    <!-- main start -->
+    <div id="main" class="row">
+      
+<div class="sidebar-control">
+  <i class="fa fa-chevron-left" id="show_sidebar"></i>
+  <i class="fa fa-chevron-right" id="hide_sidebar"></i>
+</div>
+<div id="sidebar" class="aside">
+
+  <div class="sidebar-content">
+    <div class='section widget' id="quick_links">
+      <h2 class="quick_links">Other Links<span class="left-corner"></span><span class="right-corner"></span></h2>
+
+      <div class='section-body'>
+        <ul class="link_list">
+
+
+          <li>
+            <a href="/working_calendars/search">Working Calendar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class='section widget last'>
+      <h2 class="recent_history">Recent History<span class="left-corner"></span><span class="right-corner"></span></h2>
+
+      <div class='section-body'>
+        <ul class="link_list">
+              <li><a href="/consultants/12599" title="Profile - Aaron Erickson">Profile - Aaron Erickson</a></li>
+              <li><a href="/consultants/11660" title="Profile - Ryan Puskas">Profile - Ryan Puskas</a></li>
+              <li><a href="/consultants/10809" title="Profile - Nick Drew">Profile - Nick Drew</a></li>
+              <li><a href="/consultants/10803" title="Profile - Nic Snoek">Profile - Nic Snoek</a></li>
+              <li><a href="/consultants/15644" title="Profile - Nat Young">Profile - Nat Young</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+    $('.consultant_ac_field').each(function () {
+        var search_box = $(this);
+        search_box.default_autocompelete(
+                '/consultants/sidebar_autocomplete',
+                function (event, data, selectedItem) {
+                    search_box.val($.trim($(selectedItem).find('.name').text()));
+                    window.location = $(selectedItem).find('.profile_url').text();
+                }
+        );
+    });
+
+    $('.project_ac_field').each(function () {
+        var search_box = $(this);
+        search_box.default_autocompelete(
+                '/projects/sidebar_autocomplete',
+                function (event, data, selectedItem) {
+                    search_box.val($.trim($(selectedItem).find('.display_text').text()));
+                    window.location = $(selectedItem).find('.project_url').text();
+                }
+        );
+    });
+</script>
+
+      <div id="content-wrapper">
+          <div class="sub-header">
+            <div class="header-actions"></div>
+            <h1>Profile - Aaron Erickson</h1>
+          </div>
+
+
+        <div id="content">
+          
+  
+  <div id="unmapped-abilities"></div>
+
+  <div id="consultant_profile" class="view_mode">
+    <div class="two_panes clearfix">
+      <div id="profile_bar" class="l clearfix">
+        <div id="image_upload_section">
+          <div class="render_image">
+  <img alt="Show_picture?style=profile&amp;time_stamp=1370820143" id="consultant_picture" src="/consultants/12274/show_picture?style=profile&amp;time_stamp=1370820143" />
+</div>
+
+
+<script type="text/javascript">
+
+  function removeThickBoxEvents(thickbox_item) {
+    $(thickbox_item).unbind('click');
+  }
+
+  function bindThickBoxEvents(thickbox_item) {
+    removeThickBoxEvents(thickbox_item);
+    tb_init(thickbox_item);
+  }
+
+  $(function() {
+    bindThickBoxEvents('#upload_picture_link');
+    generateToolTipFor($('img[title]'));
+  })
+
+</script>
+
+        </div>
+
+        <div class="info">
+          <div class="box clearfix">
+            <h4 class="box_name">
+              Basic Profile
+              <a href="https://contacts.thoughtworks.com/searchUser?searchQuery=aerickso" class="action" id="view_gab_profile" target="_blank">View in Contacts</a>
+            </h4>
+
+            <div class="box_content clearfix">
+              <dl>
+                <dt>
+                  Employee ID
+                </dt>
+                <dd id="employee_id">
+                  12599 
+                </dd>
+                <dt>
+                  Full Name
+                </dt>
+                <dd id="full_name">
+                  Aaron Erickson
+                </dd>
+                <dt>
+                  Gender
+                </dt>
+                <dd id="gender">
+                  Male
+                </dd>
+                <dt>
+                  Primary Role
+                </dt>
+                <dd id="primary_role">
+                  Dev
+                </dd>
+                <dt>
+                  Grade
+                </dt>
+                <dd id="grade">
+                  Prin Con
+                </dd>
+                <dt>
+                  Department
+                </dt>
+                <dd id="department">
+                  Professional Services
+                </dd>
+                <dt>
+                  Hire Date
+                </dt>
+                <dd id="hire_date" >
+                  Jun-01-2009
+                </dd>
+                <dt>
+                  Experience
+                </dt>
+                <dd id="total_experience">
+                  21.8 years
+                </dd>
+                <dt>
+                  TW Experience
+                </dt>
+                <dd id="tw_experience">
+                  5.8 years
+                </dd>
+                <dt>
+                  External Project
+                </dt>
+                <dd id="assignable_flag">
+                  Assignable
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="box clearfix">
+            <h4 class="box_name">
+              RM Profile
+              
+            </h4>
+
+            <div class="box_content">
+              <div id="attached_files_section">
+
+          <div class="item">
+            <div class="name">
+              <a href="/download?id=23543" title="Download Aaron_Erickson_March_2014.doc">Aaron_Erickson_March_2014.doc</a>
+              <span class="size">(75 KB)</span>
+            </div>
+
+            <div class="date">
+              uploaded on Mar-05-2014 02:03
+            </div>
+            <div class="actions">
+              <a href="/download?id=23543" class="download">Download</a>
+
+            </div>
+          </div>
+          <div class="item">
+            <div class="name">
+              <a href="/download?id=11116" title="Download Aaron Erickson March 2010.doc">Aaron Erickson March 2010.doc</a>
+              <span class="size">(63 KB)</span>
+            </div>
+
+            <div class="date">
+              uploaded on Feb-16-2011 22:50
+            </div>
+            <div class="actions">
+              <a href="/download?id=11116" class="download">Download</a>
+
+            </div>
+          </div>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="profile_main" class="r toggle-profile-revamp-disabled">
+        <div class="history_section section-plain">
+          
+      <div id="home_office_box" class="profile_box">
+        <div class="sub_title">
+          <h3><span>Home Office</span></h3>
+        </div>
+        
+
+<table class="table_list history_table offices_table no_hover_effect" style="">
+  <thead>
+  <tr>
+    <th class='date'>As of Date</th>
+    <th>Current Office</th>
+
+
+  </tr>
+  </thead>
+  <tbody class="work-in-offices">
+    <tr id="work_in_office_17557" class="history_row  ">
+      <td class='date'>
+          <span>Current</span>
+      </td>
+      <td class="office-name">
+        Chicago - US Central
+      </td>
+
+
+
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<div id="home_office_history" class="history_dialog hidden">
+  
+  <div class="no_content_box">
+    <span class="no_content">
+      No entries.
+    </span>
+  </div>
+
+<table class="table_list history_table offices_table " style="display: none">
+  <thead>
+  <tr>
+    <th class='date'>As of Date</th>
+    <th>Office</th>
+
+
+  </tr>
+  </thead>
+  <tbody class="work-in-offices">
+  </tbody>
+</table>
+
+</div>
+
+
+      </div>
+
+      <div id="working_office_box" class="profile_box last">
+        <div class="sub_title">
+          <h3><span>Staffing / Working Office</span></h3>
+        </div>
+          
+
+<table class="table_list history_table offices_table no_hover_effect" style="">
+  <thead>
+  <tr>
+    <th class='date'>As of Date</th>
+    <th>Current Office</th>
+
+      <th class='office_type'>Office Type</th>
+
+  </tr>
+  </thead>
+  <tbody class="work-in-offices">
+    <tr id="work_in_office_81379" class="history_row  ">
+      <td class='date'>
+          <span>Jan-05-2015</span>
+      </td>
+      <td class="office-name">
+        Dallas - US Central
+      </td>
+
+        <td class='office_type' title="Original staffing office is still involved in staffing during this trip.">
+          Working
+        </td>
+
+
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+  <div id="working_office_history" class="office_history history_dialog hidden">
+    <div class="save_error" style="display: none"></div>
+
+    
+
+<table class="table_list history_table offices_table " style="">
+  <thead>
+  <tr>
+    <th class='date'>As of Date</th>
+    <th>Office</th>
+
+      <th class='office_type'>Office Type</th>
+
+  </tr>
+  </thead>
+  <tbody class="work-in-offices">
+    <tr id="work_in_office_81379" class="history_row  highlight_current">
+      <td class='date'>
+          <span class="current" title="Current Office">Jan-05-2015</span>
+      </td>
+      <td class="office-name">
+        Dallas - US Central
+      </td>
+
+        <td class='office_type' title="Original staffing office is still involved in staffing during this trip.">
+          Working
+        </td>
+
+
+    </tr>
+    <tr id="work_in_office_80101" class="history_row  ">
+      <td class='date'>
+          <span>Oct-06-2014</span>
+      </td>
+      <td class="office-name">
+        Chicago - US Central
+      </td>
+
+        <td class='office_type' title="Original staffing office is still involved in staffing during this trip.">
+          Working
+        </td>
+
+
+    </tr>
+    <tr id="work_in_office_72472" class="history_row  ">
+      <td class='date'>
+          <span>Mar-01-2014</span>
+      </td>
+      <td class="office-name">
+        Dallas - US Central
+      </td>
+
+        <td class='office_type' title="Original staffing office is still involved in staffing during this trip.">
+          Working
+        </td>
+
+
+    </tr>
+    <tr id="work_in_office_36903" class="history_row  ">
+      <td class='date'>
+          <span>Mar-31-2012</span>
+      </td>
+      <td class="office-name">
+        Chicago - US Central
+      </td>
+
+        <td class='office_type' title="Original staffing office is still involved in staffing during this trip.">
+          Working
+        </td>
+
+
+    </tr>
+    <tr id="work_in_office_28597" class="history_row  ">
+      <td class='date'>
+          <span>Apr-18-2011</span>
+      </td>
+      <td class="office-name">
+        San Francisco - US West
+      </td>
+
+        <td class='office_type' title="Original staffing office is still involved in staffing during this trip.">
+          Working
+        </td>
+
+
+    </tr>
+    <tr id="work_in_office_27274" class="history_row  ">
+      <td class='date'>
+          <span>Apr-11-2010</span>
+      </td>
+      <td class="office-name">
+        Calgary - Canada
+      </td>
+
+        <td class='office_type' title="Original staffing office is still involved in staffing during this trip.">
+          Working
+        </td>
+
+
+    </tr>
+    <tr id="work_in_office_20967" class="history_row  ">
+      <td class='date'>
+          <span>Nov-11-2009</span>
+      </td>
+      <td class="office-name">
+        Chicago - US Central
+      </td>
+
+        <td class='office_type' title="Original staffing office is still involved in staffing during this trip.">
+          Working
+        </td>
+
+
+    </tr>
+    <tr id="work_in_office_20966" class="history_row  ">
+      <td class='date'>
+          <span>Jun-14-2009</span>
+      </td>
+      <td class="office-name">
+        San Francisco - US West
+      </td>
+
+        <td class='office_type' title="Original staffing office is still involved in staffing during this trip.">
+          Working
+        </td>
+
+
+    </tr>
+    <tr id="work_in_office_47772" class="history_row  ">
+      <td class='date'>
+          <span>Jun-01-2009</span>
+      </td>
+      <td class="office-name">
+        Chicago - US Central
+      </td>
+
+        <td class='office_type' title="This inbound office is involved in staffing during the trip.">
+          Staffing / Working
+        </td>
+
+
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+      </div>
+
+  <script type="text/javascript">
+    $(function() {
+        $('#working_office_box').historyManager({
+            title: "Staffing / Working Office",
+            historyElement: '#working_office_history',
+            refreshUrl: "/consultant_work_in_offices?consultant_id=12274",
+            newItemUrl: "/consultant_work_in_offices/new?consultant_id=12274",
+            readonly: true
+        });
+    });
+  </script>
+
+          
+<div id="working_responsibility_box" class="profile_box full">
+  <div class="sub_title">
+    <h3><span>Working Responsibility</span></h3>
+  </div>
+  
+
+<table class="table_list history_table periods_table no_hover_effect" style="">
+  <thead>
+  <tr>
+    <th class="as_of_date">As of Date</th>
+    <th class="allocations">Current Responsibility</th>
+  </tr>
+  </thead>
+  <tbody>
+      
+<tr id="responsibility_12761" class="history_row frozen  ">
+  <td class='as_of_date'>
+        <span >Jan-01-2012</span>
+
+  </td>
+  <td>
+    <table class="allocation_table no_alternate_styles no_hover_effect">
+      <tbody>
+          <tr>
+            <td class="unit">
+               Services
+            </td>
+            <td class="percent_box">
+              <div class="outer">
+                <div class="percent" style="width: 100%">
+                  100%
+                </div>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </td>
+
+</tr>
+
+  </tbody>
+</table>
+
+
+
+
+<div id="working_responsibility_history" class="responsibility_history history_dialog hidden">
+    <div class="save_error" style='display: none'></div>
+
+    
+
+<table class="table_list history_table periods_table " style="">
+  <thead>
+  <tr>
+    <th class="as_of_date">As of Date</th>
+    <th class="allocations">Responsibility</th>
+  </tr>
+  </thead>
+  <tbody>
+      
+<tr id="responsibility_12761" class="history_row frozen  highlight_current">
+  <td class='as_of_date'>
+        <span class="current" title="Current Responsibility">Jan-01-2012</span>
+
+  </td>
+  <td>
+    <table class="allocation_table no_alternate_styles no_hover_effect">
+      <tbody>
+          <tr>
+            <td class="unit">
+               Services
+            </td>
+            <td class="percent_box">
+              <div class="outer">
+                <div class="percent" style="width: 100%">
+                  100%
+                </div>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </td>
+
+</tr>
+
+      
+<tr id="responsibility_28529" class="history_row   ">
+  <td class='as_of_date'>
+        <span >Jun-01-2010</span>
+
+  </td>
+  <td>
+    <table class="allocation_table no_alternate_styles no_hover_effect">
+      <tbody>
+          <tr>
+            <td class="unit">
+               Services
+            </td>
+            <td class="percent_box">
+              <div class="outer">
+                <div class="percent" style="width: 100%">
+                  100%
+                </div>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </td>
+
+</tr>
+
+      
+<tr id="responsibility_32027" class="history_row frozen  ">
+  <td class='as_of_date'>
+        <span >Jun-01-2009</span>
+
+  </td>
+  <td>
+    <table class="allocation_table no_alternate_styles no_hover_effect">
+      <tbody>
+          <tr>
+            <td class="unit">
+               Services
+            </td>
+            <td class="percent_box">
+              <div class="outer">
+                <div class="percent" style="width: 100%">
+                  100%
+                </div>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </td>
+
+</tr>
+
+  </tbody>
+</table>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+    $(function() {
+      $('#working_responsibility_box').historyManager({
+          title: "Working Responsibility",
+          refreshUrl: "/consultants/12274/responsibility/working_periods",
+          historyElement: '#working_responsibility_history',
+          newItemUrl: "/consultants/12274/responsibility/working_periods/new",
+          readonly: true
+      });
+    });
+</script>
+
+
+        </div>
+
+        
+
+<div id="profile_section" class="profile_box full">
+  <div id="show_view">
+    
+  <div class="row container">
+
+
+  <div class="consultant_skills">
+    <div class="sub_title">
+</div>
+
+<div class="profile_content">
+
+  <div class="skills-group-parent ui-widget-content">
+    <div class="skills-group">
+      
+
+
+    <h3>Technical Skills</h3>
+
+
+    <div class="sub_profile_content rating_group  show_mode"
+         data-hints="Unrated,Want to learn,Beginner,Moderate,Experienced,Expert"
+         data-star="bulb"
+         data-attribute="skills_hash"
+    >
+
+      <table width="100%" class="preference_slider">
+
+        <tbody>
+            <tr class="rating_item" data-name="Azure">
+              <td width="100%">
+                <span>Azure</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="C#">
+              <td width="100%">
+                <span>C#</span>
+              </td>
+              <td>
+                <div class="rating" data-score="5"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="C++">
+              <td width="100%">
+                <span>C++</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Clojure">
+              <td width="100%">
+                <span>Clojure</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="F#">
+              <td width="100%">
+                <span>F#</span>
+              </td>
+              <td>
+                <div class="rating" data-score="5"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Google Chart">
+              <td width="100%">
+                <span>Google Chart</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Graph Viz">
+              <td width="100%">
+                <span>Graph Viz</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Groovy">
+              <td width="100%">
+                <span>Groovy</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Hadoop">
+              <td width="100%">
+                <span>Hadoop</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Hive">
+              <td width="100%">
+                <span>Hive</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Java">
+              <td width="100%">
+                <span>Java</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Javascript">
+              <td width="100%">
+                <span>Javascript</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Machine Learning">
+              <td width="100%">
+                <span>Machine Learning</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Mongo">
+              <td width="100%">
+                <span>Mongo</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="MySQL">
+              <td width="100%">
+                <span>MySQL</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Neural Networks">
+              <td width="100%">
+                <span>Neural Networks</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Open Stack">
+              <td width="100%">
+                <span>Open Stack</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Oracle">
+              <td width="100%">
+                <span>Oracle</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="PHP">
+              <td width="100%">
+                <span>PHP</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Pig">
+              <td width="100%">
+                <span>Pig</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Python">
+              <td width="100%">
+                <span>Python</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="R">
+              <td width="100%">
+                <span>R</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Ruby">
+              <td width="100%">
+                <span>Ruby</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Scala">
+              <td width="100%">
+                <span>Scala</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="SQL">
+              <td width="100%">
+                <span>SQL</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+
+
+    <h3>Testing Skills</h3>
+
+
+    <div class="sub_profile_content rating_group  show_mode"
+         data-hints="Unrated,Want to learn,Beginner,Moderate,Experienced,Expert"
+         data-star="bulb"
+         data-attribute="skills_hash"
+    >
+          <span>Click on edit skills and preferences to add your skills and preferences</span>
+
+      <table width="100%" class="preference_slider">
+
+        <tbody>
+        </tbody>
+
+      </table>
+    </div>
+
+
+
+    <h3>Consulting Skills</h3>
+
+
+    <div class="sub_profile_content rating_group  show_mode"
+         data-hints="Unrated,Want to learn,Beginner,Moderate,Experienced,Expert"
+         data-star="bulb"
+         data-attribute="skills_hash"
+    >
+
+      <table width="100%" class="preference_slider">
+
+        <tbody>
+            <tr class="rating_item" data-name="Communication">
+              <td width="100%">
+                <span>Communication</span>
+              </td>
+              <td>
+                <div class="rating" data-score="5"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Influence">
+              <td width="100%">
+                <span>Influence</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Negotiation">
+              <td width="100%">
+                <span>Negotiation</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Presenting">
+              <td width="100%">
+                <span>Presenting</span>
+              </td>
+              <td>
+                <div class="rating" data-score="5"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Problem solving">
+              <td width="100%">
+                <span>Problem solving</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Questioning">
+              <td width="100%">
+                <span>Questioning</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Relationship building">
+              <td width="100%">
+                <span>Relationship building</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Synthesis">
+              <td width="100%">
+                <span>Synthesis</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="System thinking">
+              <td width="100%">
+                <span>System thinking</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+
+
+    <h3>Domain Skills</h3>
+
+
+    <div class="sub_profile_content rating_group  show_mode"
+         data-hints="Unrated,Want to learn,Beginner,Moderate,Experienced,Expert"
+         data-star="bulb"
+         data-attribute="skills_hash"
+    >
+
+      <table width="100%" class="preference_slider">
+
+        <tbody>
+            <tr class="rating_item" data-name="Agriculture &amp; Mining">
+              <td width="100%">
+                <span>Agriculture &amp; Mining</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Business Services">
+              <td width="100%">
+                <span>Business Services</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Computers &amp; Electronics">
+              <td width="100%">
+                <span>Computers &amp; Electronics</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Consumer Services">
+              <td width="100%">
+                <span>Consumer Services</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Education">
+              <td width="100%">
+                <span>Education</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Energy &amp; Utilities">
+              <td width="100%">
+                <span>Energy &amp; Utilities</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Engineering, Research &amp; Development">
+              <td width="100%">
+                <span>Engineering, Research &amp; Development</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Financial Services &amp; Insurance">
+              <td width="100%">
+                <span>Financial Services &amp; Insurance</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Government">
+              <td width="100%">
+                <span>Government</span>
+              </td>
+              <td>
+                <div class="rating" data-score="1"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Retail">
+              <td width="100%">
+                <span>Retail</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Software &amp; Internet">
+              <td width="100%">
+                <span>Software &amp; Internet</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Telecommunications">
+              <td width="100%">
+                <span>Telecommunications</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+
+
+    <h3>BA &amp; XD Skills</h3>
+
+
+    <div class="sub_profile_content rating_group  show_mode"
+         data-hints="Unrated,Want to learn,Beginner,Moderate,Experienced,Expert"
+         data-star="bulb"
+         data-attribute="skills_hash"
+    >
+          <span>Click on edit skills and preferences to add your skills and preferences</span>
+
+      <table width="100%" class="preference_slider">
+
+        <tbody>
+        </tbody>
+
+      </table>
+    </div>
+
+
+
+    <h3>Management &amp; Planning Skills</h3>
+
+
+    <div class="sub_profile_content rating_group  show_mode"
+         data-hints="Unrated,Want to learn,Beginner,Moderate,Experienced,Expert"
+         data-star="bulb"
+         data-attribute="skills_hash"
+    >
+
+      <table width="100%" class="preference_slider">
+
+        <tbody>
+            <tr class="rating_item" data-name="Change Management">
+              <td width="100%">
+                <span>Change Management</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Delivery Principal">
+              <td width="100%">
+                <span>Delivery Principal</span>
+              </td>
+              <td>
+                <div class="rating" data-score="5"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Establish &amp; Cultivate Relationships">
+              <td width="100%">
+                <span>Establish &amp; Cultivate Relationships</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Feedback &amp; Coaching">
+              <td width="100%">
+                <span>Feedback &amp; Coaching</span>
+              </td>
+              <td>
+                <div class="rating" data-score="5"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Iteration Management">
+              <td width="100%">
+                <span>Iteration Management</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Product Innovation &amp; Discovery   ">
+              <td width="100%">
+                <span>Product Innovation &amp; Discovery   </span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Project Management">
+              <td width="100%">
+                <span>Project Management</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Project Planning &amp; Resourcing">
+              <td width="100%">
+                <span>Project Planning &amp; Resourcing</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Shaping &amp; Planning">
+              <td width="100%">
+                <span>Shaping &amp; Planning</span>
+              </td>
+              <td>
+                <div class="rating" data-score="5"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Stakeholder Management">
+              <td width="100%">
+                <span>Stakeholder Management</span>
+              </td>
+              <td>
+                <div class="rating" data-score="4"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Strategic Envisioning ">
+              <td width="100%">
+                <span>Strategic Envisioning </span>
+              </td>
+              <td>
+                <div class="rating" data-score="5"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+
+
+    <h3>Language Skills</h3>
+
+
+    <div class="sub_profile_content rating_group  show_mode"
+         data-hints="Unrated,Want to learn,Beginner,Moderate,Experienced,Expert"
+         data-star="bulb"
+         data-attribute="skills_hash"
+    >
+
+      <table width="100%" class="preference_slider">
+
+        <tbody>
+            <tr class="rating_item" data-name="English">
+              <td width="100%">
+                <span>English</span>
+              </td>
+              <td>
+                <div class="rating" data-score="5"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Mandarin">
+              <td width="100%">
+                <span>Mandarin</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Portuguese">
+              <td width="100%">
+                <span>Portuguese</span>
+              </td>
+              <td>
+                <div class="rating" data-score="2"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+            <tr class="rating_item" data-name="Spanish">
+              <td width="100%">
+                <span>Spanish</span>
+              </td>
+              <td>
+                <div class="rating" data-score="3"></div>
+              </td>
+              <td>
+                <div class="hint"></div>
+              </td>
+            </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+    </div>
+  </div>
+
+  <div class="sub_profile_section">
+    <div class="heading">
+      <div class="actions">
+      </div>
+
+      <h3>More about my Skills (optional)</h3>
+    </div>
+
+    <div class="sub_profile_content">
+          <p>Skills:
+<br />.Net</p>
+
+<p>Domains:
+<br />Financial Services, Insurance</p>
+
+<p>Other Skills:
+<br />F#, Product Development, Innovation.</p>
+
+<p></p>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+
+  <div class="consultant_prefs">
+    <div class="profile_content">
+  <div class="sub_profile_section" id="project_preferences">
+    <div class="heading">
+      <div class="actions">
+      </div>
+      <h3>Project Preferences</h3>
+    </div>
+
+    <div class="sub_profile_content">
+        <p>Greenfield product development with a sane client. Not looking to join another giant co-source project.</p>
+
+<p>Re tech platform/language, my preference chain is as follows: F# > C# > Clojure > Ruby > Scala > VB > Flipping Burgers > Java.</p>
+    </div>
+  </div>
+
+  <div class="sub_profile_section"id="travel_preferences">
+    <div class="heading">
+      <h3>Travel Preferences</h3>
+    </div>
+
+    <div class="sub_profile_content">
+          <div class="sub_profile_options">Domestic: Yes
+            &nbsp; &nbsp;&nbsp;&nbsp; International: Yes
+          </div>
+          <p>International in North America/Europe.  Portland, OR is an ideal location - if there were any opportunities there (might even write Java code in such a case... oh the horror!).  Could do weekly flights to London or Hamburg if needed.  Yes I have no life.</p>
+
+    </div>
+  </div>
+
+  <div class="sub_profile_section" id="long_term_goal">
+    <div class="heading">
+      <div class="actions">
+      </div>
+      <h3>Long Term Goal</h3>
+    </div>
+
+    <div class="sub_profile_content">
+        <p>Create a profitable product for a client? ... for us? To not live a life of building sandcastles that get taken out by the tide.</p>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+    var profileForm = {
+        changed: false,
+
+        showEditView: function () {
+            $('#consultant_profile').removeClass('view_mode').addClass('edit_mode');
+            $('#action .edit_mode').css('display', 'inline');
+            $('#action .view_mode').css('display', 'none');
+            $('.rating_group select').chosen();
+            var currentTab = $("#show_view .skills-group").accordion().accordion("option", "active");
+
+            $("#edit_view .skills-group").accordion().accordion("option", "active", currentTab);
+
+            $("#experience input[type='number']").keypress(function (e) {
+                var event = window.event || e;
+                var key = event.keyCode || event.which;
+                var keychar = String.fromCharCode(key);
+                return ("0123456789.").indexOf(keychar) > -1;
+            });
+        },
+
+        showReadView: function () {
+            document.location = "/consultants/12599";
+        },
+
+        cancelEdit: function () {
+            if (!profileForm.changed) {
+                // No changes. Simply switch to the other view without reloading.
+                profileForm.showReadView();
+            }
+            else {
+                // Need to reload the page. Confirm before doing.
+                if (confirm("You will lose any change with the profile, are you sure to exit?")) {
+                    document.location = "/consultants/12599";
+                }
+            }
+        },
+
+        saveChanges: function () {
+            $("form#profile_edit_form").submit();
+        }
+    };
+
+
+    function changeShadowBox() {
+        if ($("#consultant_assignable").is(":checked")) {
+            $("#consultant_assignable_shadow").attr("checked", false)
+        } else {
+            $("#consultant_assignable_shadow").attr("checked", true)
+        }
+    }
+
+    $(function () {
+        showRatings();
+
+        $("input, select, textarea").bind("change", function () {
+            profileForm.changed = true;
+        });
+
+        $(".skills-group").accordion({
+            autoHeight: false
+        });
+    })
+</script>
+
+
+        <div id="project_experiences" class="profile_box full">
+          <h3>Project Experience</h3>
+              <ul class="text_list">
+                    <li>
+                      <h4>
+                        <span class="account_name">WPEngine</span>
+
+                        <p class="project_name"><a href="/projects/30371">2015 WPEngine Billing System</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                1 months, 26 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jan 12, 2015
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jun 12, 2015
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/30628">2015 Project Management 1</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                2 months, 3 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jan 05, 2015
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jan 01, 2016
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Xenex</span>
+
+                        <p class="project_name"><a href="/projects/30680">2015 Joint Team</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                2 months, 3 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jan 05, 2015
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jul 03, 2015
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Xenex</span>
+
+                        <p class="project_name"><a href="/projects/29856">2014 Portal Rescue</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                1 months, 16 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Nov 17, 2014
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jan 02, 2015
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Xenex</span>
+
+                        <p class="project_name"><a href="/projects/30097">2014 Callisto</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                2 months, 21 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Oct 13, 2014
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jan 02, 2015
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Sysco Foods</span>
+
+                        <p class="project_name"><a href="/projects/29270">BI Reporting Platform Assessment</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                16 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Aug 27, 2014
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Sep 12, 2014
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/29246">2014 Project Management 1</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                8 months, 2 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> May 05, 2014
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jan 02, 2015
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/28181">2014 Openstack Build and Release ZA</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                3 months, 7 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jan 27, 2014
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> May 04, 2014
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/28143">2014 Heat</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                3 months, 7 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jan 27, 2014
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> May 04, 2014
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/28142">2014 Reach</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                3 months, 21 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jan 13, 2014
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> May 04, 2014
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/28216">2014 CCP</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                3 months, 21 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jan 13, 2014
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> May 04, 2014
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/28141">2014 Cloud Engineering</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                4 months, 5 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Dec 30, 2013
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> May 04, 2014
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/21794">2013 CheckMate</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                2 months, 14 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Nov 11, 2013
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jan 24, 2014
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/25606">2013 Cloud Control Panel</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                2 months, 0 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Nov 11, 2013
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jan 10, 2014
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/27066">2013 Reach</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                6 months, 20 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jun 24, 2013
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jan 10, 2014
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/25604">2013 Cloud Enginering / SH</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                11 months, 17 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jan 14, 2013
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Dec 27, 2013
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Rackspace</span>
+
+                        <p class="project_name"><a href="/projects/17216">2012 SliceHost</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                9 months, 16 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Mar 31, 2012
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jan 11, 2013
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Expedia, Inc.</span>
+
+                        <p class="project_name"><a href="/projects/15934">Super Itinerary - Internal Beta</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                5 months, 15 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Sep 19, 2011
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Mar 02, 2012
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Expedia, Inc.</span>
+
+                        <p class="project_name"><a href="/projects/15933">Payment Service Assessment</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                17 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Sep 06, 2011
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Sep 23, 2011
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Expedia, Inc.</span>
+
+                        <p class="project_name"><a href="/projects/14958">Expedia Web Re-platforming</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                3 months, 12 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Apr 18, 2011
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jul 29, 2011
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Shaw Communications</span>
+
+                        <p class="project_name"><a href="/projects/13889">Shaw: FY11</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                7 months, 16 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Sep 01, 2010
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Apr 15, 2011
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Shaw Communications</span>
+
+                        <p class="project_name"><a href="/projects/10664">Shaw: FY10 Additions</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                2 months, 11 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jun 21, 2010
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Aug 31, 2010
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Shaw Communications</span>
+
+                        <p class="project_name"><a href="/projects/10664">Shaw: FY10 Additions</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                1 months, 15 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Apr 12, 2010
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> May 27, 2010
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Concentra</span>
+
+                        <p class="project_name"><a href="/projects/10059">Concentra: EPM Project Initiation</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                25 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Feb 01, 2010
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Feb 26, 2010
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Concentra</span>
+
+                        <p class="project_name"><a href="/projects/12348">Concentra: EPM Inception</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                25 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jan 04, 2010
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jan 29, 2010
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Concentra</span>
+
+                        <p class="project_name"><a href="/projects/12348">Concentra: EPM Inception</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                11 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Dec 07, 2009
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Dec 18, 2009
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">Wells Fargo Bank - US</span>
+
+                        <p class="project_name"><a href="/projects/10762">Nexsure Assessment</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                18 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Oct 26, 2009
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Nov 13, 2009
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">PricewaterhouseCoopers (PwC) - US</span>
+
+                        <p class="project_name"><a href="/projects/10787">Assignee.com Delivery</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                1 months, 23 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Aug 31, 2009
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Oct 23, 2009
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">PricewaterhouseCoopers (PwC) - US</span>
+
+                        <p class="project_name"><a href="/projects/10787">Assignee.com Delivery</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                1 months, 9 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jul 20, 2009
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Aug 28, 2009
+                      </p>
+
+                    </li>
+                    <li>
+                      <h4>
+                        <span class="account_name">PricewaterhouseCoopers (PwC) - US</span>
+
+                        <p class="project_name"><a href="/projects/10786">Assignee.com Architecture</a></p>
+                      </h4>
+                      <p class="assignment_duration">
+                                1 months, 2 days
+                      </p>
+
+                      <p class="date_range">
+                        <span>From</span> Jun 15, 2009
+                      </p>
+
+                      <p class="date_range">
+                        <span>To</span> Jul 17, 2009
+                      </p>
+
+                    </li>
+              </ul>
+        </div>
+
+        <div id="recent_leaves" class="profile_box full">
+          <h3>Leave History</h3>
+
+              <ul class="text_list">
+                    <li>
+                      <span class="date_range"><span class="from_date">Jan 16, 2015</span> - <span class="to_date">Jan 23, 2015</span></span>
+                      <span class="num_days">5 days</span>
+                      <span class="type">Annual Leave</span>
+                    </li>
+                    <li>
+                      <span class="date_range"><span class="from_date">Dec 30, 2014</span> - <span class="to_date">Jan 02, 2015</span></span>
+                      <span class="num_days">3 days</span>
+                      <span class="type">Annual Leave</span>
+                    </li>
+                    <li>
+                      <span class="date_range"><span class="from_date">Dec 22, 2014</span> - <span class="to_date">Dec 29, 2014</span></span>
+                      <span class="num_days">4.0 days</span>
+                      <span class="type">Annual Leave</span>
+                    </li>
+                    <li>
+                      <span class="date_range"><span class="from_date">Jul 31, 2014</span> - <span class="to_date">Aug 08, 2014</span></span>
+                      <span class="num_days">7 days</span>
+                      <span class="type">Annual Leave</span>
+                    </li>
+                    <li>
+                      <span class="date_range"><span class="from_date">May 26, 2014</span> - <span class="to_date">May 30, 2014</span></span>
+                      <span class="num_days">4 days</span>
+                      <span class="type">Annual Leave</span>
+                    </li>
+                    <li>
+                      <span class="date_range"><span class="from_date">Jan 10, 2014</span> - <span class="to_date">Jan 19, 2014</span></span>
+                      <span class="num_days">6 days</span>
+                      <span class="type">Annual Leave</span>
+                    </li>
+              </ul>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+  <script>
+  </script>
+
+<script type="text/javascript">
+  function launchDialog() {
+    $.ajax({
+      url: '/consultants/12274/confirm_destroy',
+      success: function (data) {
+        var content = $("<div></div>").html(data.content);
+        if (data.showWarning)
+          launchWarning(content)
+        else
+          launchConfirmation(content)
+      }
+    });
+  }
+
+  function launchConfirmation(data) {
+    $(data).dialog({
+      width: '600px', title: "Delete consultant",
+      close: function (ev, ui) {
+        $(this).dialog("destroy");
+      },
+      buttons: {
+        "Delete": function () {
+          $("#consultant-delete form").submit();
+        },
+        "Cancel": function () {
+          $(this).dialog("close");
+        }
+      }
+    });
+  }
+
+  function launchWarning(data) {
+    $(data).dialog({
+      width: '600px',
+      title: "Delete consultant",
+      close: function (ev, ui) {
+        $(this).dialog("destroy");
+      },
+      buttons: {
+        "Ok": function () {
+          $(this).dialog("close");
+        }
+      }
+    });
+  }
+</script>
+
+
+          <br class="clear"/>
+        </div>
+        <div id="popup_mask"></div>
+      </div>
+    </div>
+    <!-- main end -->
+    <div class="clearfix"></div>
+    <div id='ajax-loading'><span>Loading...</span></div>
+    <div id="center" style="position:fixed;top:50%;left:50%;z-index:1000;"></div>
+    <div id="error_dialog" style="display: none">
+  Sorry, but something went wrong. Please reload the page or try again later.
+</div>
+
+<script type="text/javascript">
+  $('#error_dialog').dialog({
+    modal: true,
+    width: 600,
+    title: "Application Error",
+    autoOpen: false,
+    zIndex: 0,
+    resizable: false,
+    closeOnEscape: false
+  });
+</script>
+    </div>
+
+    <div class="error_box" id="download-error-message" style="display:hidden">
+      Oops! Looks like something went wrong. Please retry.
+    </div>
+
+      <script type="text/javascript">
+        var clicky_site_ids = clicky_site_ids || [];
+        clicky_site_ids.push(100667207);
+        (function () {
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = '//static.getclicky.com/js';
+          ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild(s);
+        })();
+      </script>
+      <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100667207ns.gif"/></p></noscript>
+
+    <script type="text/javascript">
+      $('#download-error-message').dialog({
+        modal: true,
+        width: 500,
+        height: 100,
+        title: "Download Failed",
+        autoOpen: false,
+        zIndex: 0,
+        resizable: false,
+        closeOnEscape: true
+      });
+
+      function closewarning() {
+        $.ajax({
+          url: '/warning_message/flag_warning_message',
+          success: function () {
+            $('#warningMessage').slideUp();
+          }
+        });
+      }
+    </script>
+
+      <script>
+        (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-50343650-1', 'thoughtworks.com');
+
+
+        $(function () {
+          if (window.location.hash.slice(1) != "") {
+            var hash = window.location.hash.slice(1);
+            ga('send', 'pageview', hash);
+          } else {
+            ga('send', 'pageview');
+          }
+        });
+      </script>
+
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".user-options").click(function () {
+          $(this).toggleClass("show");
+        });
+      });
+    </script>
+  </div>
+</div>
+</body>
+</html>

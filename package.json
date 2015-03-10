@@ -1,6 +1,13 @@
 {
   "name": "express-demo",
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "typescript": "latest",
+    "cheerio": "latest",
+    "cookie-parser": "latest",
+    "cookies.txt": "latest",
+    "request": "latest",
+    "node-curl": "0.3.3"
   }
 }
+  

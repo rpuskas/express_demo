@@ -2,3 +2,4 @@ node_modules/
 .monitor
 config/env/env.json
 Makefile
+.idea*
