@@ -3,3 +3,6 @@ node_modules/
 config/env/env.json
 Makefile
 .idea*
+output.html
+output.json
+npm-debug.log

@@ -7,7 +7,8 @@
     "cookie-parser": "latest",
     "cookies.txt": "latest",
     "request": "latest",
-    "node-curl": "0.3.3"
+    "q": "latest",
+    "mustache": "latest"
   }
 }
   

@@ -1,12 +1,11 @@
 var https = require("https");
 var fs = require('fs');
 var path = require('path');
-var cookieParser = require('cookie-parser');
-var cookie = require('cookies.txt');
 var request = require('request');
-
-var alive = 0;
-var dead = 0;
+var cheerio = require("cheerio");
+var Q = require("Q");
+var Mustache = require("mustache");
+var output = {people:[]};
 
 function createRequest(id,isImage) {
   return { 
@@ -19,6 +18,7 @@ function createRequest(id,isImage) {
 
 function requestConsultant(id) {
 
+  var deferred = Q.defer()
   var results = '';
   var req = https.request(createRequest(id,false), function(res) {
     
@@ -27,59 +27,46 @@ function requestConsultant(id) {
     }); 
 
     res.on('end', function (data) {
-      console.log(res.statusCode);
-      if(res.statusCode == '404') {
-        dead++;
-      } else {
-        alive++;
+      if(res.statusCode == '200') {
+        var $ = cheerio.load(results);
+        var _image = $("#image_upload_section img");
+        output.people.push({"name": $("h1").text().split(' - ')[1], "image": _image.attr("src")});
+        process.stdout.write('*')
       }
-      console.log('alive: ' + alive);
-      console.log('dead: ' + dead);
+      deferred.resolve();
     });
 
   });
 
   req.on('error', function(e) {
     console.log('error');
+    deferred.reject();
   });
 
   req.end();
+  return deferred.promise;
 }
 
-function downloadPic(personId) {
 
-  var results = ''; 
-  var req = https.request(createRequest(personId), function(res) {
-      res.setEncoding('binary')
-      
-      res.on('data', function (chunk) {
-        results = results + chunk;
-      }); 
-      
-      res.on('end', function (data) {
-        fs.writeFile('images/' + personId + ".jpg", results, 'binary', function(err) {
-          if (err) {
-            throw err;
-          }
-
-          console.log('File ' + personId + 'saved.')
-        });
-      });
-  });
-
-  req.on('error', function(e) {
-    console.log('error');
-  });
-
-  req.end();
+function createTemplate(output) {
+  var template = fs.readFileSync(path.resolve('output_template.html'),'utf8');
+  return Mustache.render(template, output);
 }
 
 function downloadRange(from, to) {
-  for (var i = from; i < to; i++) {
-    requestConsultant(i);
+  var promises = [];
+  for (var i = from; i < to; i++) {    
+    promises.push(requestConsultant(i));
   };
+
+  Q.all(promises).then(function() {
+    console.log('\nDONE!')
+    fs.writeFileSync('output.js', JSON.stringify(output));
+    fs.writeFileSync('output.html',createTemplate(output));
+  })
 }
 
-downloadRange(12000,12100);
+downloadRange(11600,11601);
+
 
 
